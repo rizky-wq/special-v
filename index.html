@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucin Teka-Teki</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3, #ff9a9e);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            animation: bg-animation 5s infinite alternate;
+        }
+        @keyframes bg-animation {
+            0% { background: #ff758c; }
+            100% { background: #ff7eb3; }
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            max-width: 400px;
+        }
+        button {
+            background: #ff4f70;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hallo Icaa! 🥰</h1>
+        <p>Aku Punya Pertanyaan Buat Kamu!</p>
+        <button onclick="showQuestion()">Klik Untuk Lanjut</button>
+        <div id="question-container" class="hidden">
+            <p>Apa Yang Lebih Manis Dari Gula?</p>
+            <button onclick="showAnswer('Salah! 😜')">Coklat</button>
+            <button onclick="showAnswer('Salah! 😆')">Madu</button>
+            <button onclick="showAnswer('Benar! Kamu! ❤️')">Aku</button>
+        </div>
+        <p id="answer" class="hidden"></p>
+    </div>
+    <script>
+        function showQuestion() {
+            document.getElementById("question-container").classList.remove("hidden");
+        }
+        function showAnswer(text) {
+            document.getElementById("answer").textContent = text;
+            document.getElementById("answer").classList.remove("hidden");
+        }
+    </script>
+</body>
+</html>
